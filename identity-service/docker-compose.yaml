@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: db-postgres-s14
+    environment:
+      POSTGRES_DB: identity_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_s14_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_s14_data:
